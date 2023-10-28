@@ -1,0 +1,72 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <h:outputScript name="script.js" library="js" />
+        <h:outputStylesheet name="default.css" library="css" />
+        <h:outputStylesheet name="theme.css" library="css" />
+    <title>Autor</title>
+    <style type="text/css">
+        body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #A3F9DC;
+    background-image: url('#{request.contextPath}/resources/images/pastel.jpg');
+            background-size: cover; /* Ajusta el tamaño de la imagen */
+            background-repeat: no-repeat; /* Evita la repetición de la imagen */
+            background-attachment: fixed; /* Fija la imagen de fondo */
+}
+
+    </style>
+</h:head>
+
+<h:body>
+    <p:messages id="messages" showDetail="true" closable="true" styleClass="customMessage">
+            <p:autoUpdate />
+        </p:messages>
+    
+    <br/>
+    <center>
+        <h1>Autor</h1>
+    </center>
+    <br/>
+        <center>
+
+     <h:form  style="align-items:center" >
+      <p:panelGrid columns="4" >
+            
+            <h:outputLabel value="Nombre"/>
+            <p:inputText id="txtNombre" value="#{bkn_Autor.nombre}"/>
+            
+            <h:outputLabel value="Fecha de Nacimiento"/>
+            <p:inputText id="txtFechaNacimiento" value="#{bkn_Autor.fecha_nac}"/>
+ 
+            <h:outputLabel value="Nacionalidad"/>
+            <p:inputText id="txtNacionalidad" value="#{bkn_Autor.nacionalidad}" />
+            
+            <h:outputLabel value="Genero literario"/>
+            <p:inputText id="txtGeneroLiterario" value="#{bkn_Autor.categoria}" />
+
+            </p:panelGrid>
+            <br/>
+              
+            <p:commandButton id="btnAutores" value="Guardar"  action="#{bkn_Autor.insertarAutor()}" />
+                    <p:commandButton id="btnActAutores" value="Actualizar" action="#{bkn_Inicio.VentanaActAutor()}"/>
+                    <p:commandButton id="btnCatAutores" value="Catalogo" action="#{bkn_Inicio.VentanaCatAutor()}"/>
+                    <p:commandButton id="btnInicio" value="Regresar" action="#{bkn_Inicio.VentanaPrincipal()}"/>
+
+
+    </h:form>
+        </center>
+
+</h:body>
+
+</html>

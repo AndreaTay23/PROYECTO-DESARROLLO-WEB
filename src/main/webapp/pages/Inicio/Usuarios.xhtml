@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <h:outputScript name="script.js" library="js" />
+        <h:outputStylesheet name="default.css" library="css" />
+        <h:outputStylesheet name="theme.css" library="css" />
+    <title>Usuario</title>
+    <style type="text/css">
+        body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+     background-image: url('#{request.contextPath}/resources/images/pastel.jpg');
+            background-size: cover; /* Ajusta el tamaño de la imagen */
+            background-repeat: no-repeat; /* Evita la repetición de la imagen */
+            background-attachment: fixed; /* Fija la imagen de fondo */
+}
+
+    </style>
+</h:head>
+
+<h:body>
+    <p:messages id="messages" showDetail="true" closable="true" styleClass="customMessage">
+            <p:autoUpdate />
+        </p:messages>
+   
+<center>
+    <br/> <h1>Usuarios</h1><br/>
+     <h:form class="formForm" style="align-items:center">
+      <p:panelGrid columns="4" >
+            
+          
+            <h:outputLabel value="Usuario"/>
+            <p:inputText id="txtUsuario" value="#{bkn_usuarios.nombre}"/>
+ 
+            <h:outputLabel value="Correo"/>
+            <p:inputText id="txtCorreo" value="#{bkn_usuarios.correo}" />
+            <h:outputLabel value="Telefono"/>
+            <p:inputText id="txtTelefono" value="#{bkn_usuarios.telefono}" />
+              <h:outputLabel value="Direccion"/>
+            <p:inputText id="txtDireccion" value="#{bkn_usuarios.direccion}" />
+
+            </p:panelGrid>
+            <br/>
+               
+                <p:commandButton id="btnInserUsuario" value="Guardar"  action="#{bkn_usuarios.insertarUsuario()}" /> 
+                <p:commandButton id="btnActUsuarios" value="Actualizar" action="#{bkn_Inicio.VentanaActUsuarios()}"/>
+                <p:commandButton id="btnCatUsuarios" value="Catalogo" action="#{bkn_Inicio.VentanaCatUsuarios()}"/>
+                <p:commandButton id="btnInicio" value="Regresar" action="#{bkn_Inicio.VentanaPrincipal()}"/>
+    </h:form>
+</center>
+</h:body>
+
+</html>

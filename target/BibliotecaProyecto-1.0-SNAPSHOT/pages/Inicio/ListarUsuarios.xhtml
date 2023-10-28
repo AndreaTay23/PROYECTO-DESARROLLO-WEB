@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <h:outputScript name="script.js" library="js" />
+        <h:outputStylesheet name="default.css" library="css" />
+        <h:outputStylesheet name="theme.css" library="css" />
+    <title>Catalogo Usuario</title>
+    <style type="text/css">
+        body {
+    font-family: Arial, sans-serif;
+    background-color: skyblue;
+    background-image: url('#{request.contextPath}/resources/images/pastel.jpg');
+            background-size: cover; /* Ajusta el tamaño de la imagen */
+            background-repeat: no-repeat; /* Evita la repetición de la imagen */
+            background-attachment: fixed; /* Fija la imagen de fondo */
+}
+    </style>
+</h:head>
+
+<h:body>
+<br/>
+    <center>
+        <h1>Usuarios</h1>
+    </center>
+
+     <p:commandButton id="btnInicio" value="Regresar" action="#{bkn_Inicio.VentanaPrincipal()}"/>
+<h:form>          
+   
+    <br/>
+    <div class="card">
+        <p:dataTable var="item" value="#{bkn_usuarios.listaUsuarios}">
+           
+            <p:column headerText="Id">
+                <h:outputText id="txtId" value="#{item.id}" />
+            </p:column>
+
+            <p:column headerText="Usuario">
+                <h:outputText id="txtNombre" value="#{item.nombre}" />
+            </p:column>
+
+            <p:column headerText="Correo">
+                <h:outputText id="txtCorreo" value="#{item.correo}" />
+            </p:column>
+
+            <p:column headerText="Direccion">
+                <h:outputText id="txtDireccion" value="#{item.direccion}" />
+            </p:column>
+            
+             <p:column headerText="Telefono">
+                 <h:outputText id="txtTelefono" value="#{item.telefono}" />
+            </p:column>
+            
+            <br/>
+        </p:dataTable>
+    </div>
+</h:form>
+</h:body>
+    
+    
+</html>

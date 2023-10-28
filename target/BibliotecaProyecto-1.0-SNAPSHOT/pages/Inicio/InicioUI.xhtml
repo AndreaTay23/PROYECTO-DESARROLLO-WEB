@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+    <h:outputScript name="script.js" library="js" />
+        <h:outputStylesheet name="default.css" library="css" />
+        <h:outputStylesheet name="theme.css" library="css" />
+    <title>Inicio</title>
+    <style>
+        
+        body {
+                background-color: #F0F4F8;
+            } 
+            
+         body {
+            background-image: url('#{request.contextPath}/resources/images/pastel.jpg');
+            background-size: cover; /* Ajusta el tamaño de la imagen */
+            background-repeat: no-repeat; /* Evita la repetición de la imagen */
+            background-attachment: fixed; /* Fija la imagen de fondo */
+         }
+        
+        </style>
+</h:head>
+
+<h:body>
+     
+  <p:panelGrid columns="1" style=" margin:auto">
+        <img src="https://umgnaranjo.com/wp-content/uploads/2018/11/logo2.png " width="300"/>
+        </p:panelGrid>
+    <center>
+        <div style="align-items: center">
+            <h:form>
+              <h2>PROYECTO BIBLIOTECA</h2>  
+                  <h2>UMG</h2>
+                <br></br>
+                <p:panelGrid columns="4">
+                    <p:outputLabel value="LIBROS"/>
+                    <p:commandButton id="btnlibros" value="INGRESAR" action="#{bkn_Inicio.VentanaLibro()}"/> 
+                    
+                    <p:outputLabel value="AUTORES"/>
+                    <p:commandButton id="btnAutores" value="INGRESAR" action="#{bkn_Inicio.VentanaAutor()}"/> 
+                    
+                    <p:outputLabel value="USUARIOS"/>
+                    <p:commandButton id="btnUsuarios" value="INGRESAR" action="#{bkn_Inicio.VentanaUsuarios()}"/> 
+                     
+                    <p:outputLabel value="PRESTAMOS"/>
+                    <p:commandButton id="btnPrestamos" value="INGRESAR" action="#{bkn_Inicio.VentanaPrestamos()}"/> 
+                    
+                    <p:outputLabel value="DEVOLUCIONES"/>
+                    <p:commandButton id="btnDevoluciones" value="INGRESAR" action="#{bkn_Inicio.VentanaDevoluciones}"/>
+                    
+                   <p:outputLabel value="CATALOGOS"/>
+                    <p:commandButton id="btnCatalogos" value="INGRESAR" action="#{bkn_Inicio.VentanaCatLibro}"/>
+                    
+                </p:panelGrid>
+            </h:form>   
+        </div>
+       </center>
+              
+        
+      
+     <br/>
+        <center> <h5>Derechos Reservados 2023©, Octavo Semestre, UMG, Santa Lucía Cotz</h5></center>
+</h:body>
+
+</html>
+

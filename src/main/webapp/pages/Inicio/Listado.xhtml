@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <h:outputScript name="script.js" library="js" />
+        <h:outputStylesheet name="default.css" library="css" />
+        <h:outputStylesheet name="theme.css" library="css" />
+    <title>Catalogo Autor</title>
+    <style type="text/css">
+        
+        body {
+    font-family: Arial, sans-serif;
+    background-color: skyblue;
+    background-image: url('#{request.contextPath}/resources/images/pastel.jpg');
+            background-size: cover; /* Ajusta el tamaño de la imagen */
+            background-repeat: no-repeat; /* Evita la repetición de la imagen */
+            background-attachment: fixed; /* Fija la imagen de fondo */
+}
+    </style>
+</h:head>
+
+<h:body>
+<br/>
+    <center>
+        <h1>Autores</h1>
+    </center>
+    
+    <h:form>
+    
+    <p:commandButton id="btnInicio" value="Regresar" action="#{bkn_Inicio.VentanaPrincipal()}"/>
+
+    <div class="card">
+        <p:dataTable var="item" value="#{bkn_Autor.listaAutores}">
+           
+           
+            <p:column headerText="ID">
+                <h:outputText id="txtId" value="#{item.id}" />
+            </p:column>
+
+            <p:column headerText="Nombre">
+                <h:outputText id="txtNombre" value="#{item.nombre}" />
+            </p:column>
+
+            <p:column headerText="Fecha nacimiento">
+                <h:outputText id="txtFechaNacimiento" value="#{item.fecha_nac}" />
+            </p:column>
+
+            <p:column headerText="Nacionalidad">
+                <h:outputText id="txtNacionalidad" value="#{item.nacionalidad}" />
+            </p:column>
+            
+             <p:column headerText="Categoria">
+                 <h:outputText id="txtCategoria" value="#{item.categoria}" />
+            </p:column>
+            
+            <br/>
+        </p:dataTable>
+    </div>
+</h:form>
+</h:body>
+    
+    
+</html>
